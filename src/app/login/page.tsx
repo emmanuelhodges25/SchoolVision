@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { PublicShell } from "../../components/public-shell";
+import { PreviewForm } from "../../components/preview-form";
+
+export const metadata: Metadata = { title: "Sign in" };
+export default function LoginPage() { return <PublicShell><main><section className="page-hero"><div className="container"><span className="eyebrow">Secure access</span><h1>Welcome back to School Vision.</h1><p>Sign-in is not connected in this preview.</p></div></section><section className="section"><div className="container"><div className="form-card"><div className="preview-banner"><span aria-hidden="true">ⓘ</span><div><strong>Preview only</strong><p>No account is configured. The form does not authenticate or transmit your details.</p></div></div><PreviewForm kind="login"/><p className="muted">Need an institution workspace? <Link className="link-arrow" href="/register/institution">Contact our team →</Link></p><div className="form-section"><h2>Explore a role preview</h2><p>These links show interface previews only. They do not grant access to school records.</p><div className="portal-grid">{[["Platform", "/platform"], ["Institution", "/school"], ["Staff", "/staff"], ["Student", "/student"]].map(([name, href]) => <Link className="portal-option" href={href} key={href}><strong>{name}</strong><span>Open preview →</span></Link>)}</div></div></div></div></section></main></PublicShell>; }

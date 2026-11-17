@@ -1,69 +1,18 @@
-import Image from "next/image";
+import Link from "next/link";
+import { PublicShell } from "../components/public-shell";
+
+const features = [
+  ["01", "A clear student picture", "Keep enrollment, student profiles, attendance and learning records connected."],
+  ["02", "Grounded operations", "Understand finance, inventory and daily operations through verified records."],
+  ["03", "Built around your school", "Set up academic and administrative structures to match each institution."],
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <PublicShell><main>
+    <section className="hero"><div className="container hero-grid"><div className="hero-copy"><span className="eyebrow">A clearer view of school life</span><h1>Every part of school, <em>in better view.</em></h1><p>School Vision brings the important work of school management into one considered place, helping teams stay informed and focused on learning.</p><div className="hero-actions"><Link className="button" href="/register/institution">Explore School Vision <span aria-hidden="true">↗</span></Link><Link className="link-arrow" href="/features">See what’s included <span aria-hidden="true">→</span></Link></div><div className="hero-footnote"><span aria-hidden="true">✦</span> Thoughtful tools for the way your school works</div></div><div className="hero-art" aria-label="Illustration of a school campus and management areas"><div className="campus-card"><div className="campus-art"><span className="campus-sun"/><span className="campus-hill"/><span className="campus-building"/><span className="illustration-label">A connected school day</span></div><div className="feature-chip"><span className="feature-chip-icon">◷</span><span><strong>Attendance</strong><span>Verified records</span></span></div><div className="feature-chip"><span className="feature-chip-icon">▤</span><span><strong>School operations</strong><span>One clear workspace</span></span></div></div><div className="floating-note"><span className="note-dot"/><div><strong>Clarity for every role</strong><span>Designed around real school work</span></div></div></div></div></section>
+    <section className="section"><div className="container"><div className="section-heading"><span className="eyebrow">Made for connected work</span><h2>Less searching. More seeing.</h2><p>A shared view can help school teams make better sense of the work already happening every day.</p></div><div className="feature-grid">{features.map(([n, title, text]) => <article className="feature-card" key={n}><span className="feature-card-icon">{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+    <section className="section section-soft"><div className="container principle-grid"><div className="principle-copy"><span className="eyebrow">One platform, many school shapes</span><h2>Your school sets the structure.</h2><p>Schools differ in how they organize learners, terms, programs and responsibilities. School Vision is planned to support institution-specific structures instead of forcing every school into one template.</p><ul className="principle-list"><li><span aria-hidden="true">✓</span> Configure academic sessions, classes and subjects to fit your institution</li><li><span aria-hidden="true">✓</span> Give each role access to the work it is responsible for</li><li><span aria-hidden="true">✓</span> Build reports from verified records</li></ul></div><div className="principle-panel"><article className="principle-panel-card"><span className="feature-card-icon">⌂</span><div><h3>Institution administrator</h3><p>Manages their school’s users, structure and day-to-day operations.</p></div></article><article className="principle-panel-card"><span className="feature-card-icon">◎</span><div><h3>School staff</h3><p>Works with assigned learning groups and authorized records.</p></div></article><article className="principle-panel-card"><span className="feature-card-icon">◉</span><div><h3>Students</h3><p>Views approved personal learning information and notices.</p></div></article></div></div></section>
+    <section className="section"><div className="container"><div className="section-heading"><span className="eyebrow">A deliberate beginning</span><h2>Start with your school. Grow with confidence.</h2><p>From an initial conversation to an organized workspace, each step should be clear.</p></div><div className="steps-grid">{[["Understand", "Share your institution’s needs and how it is organized."], ["Review", "The platform team reviews the request and confirms next steps."], ["Configure", "Set up approved roles and school-specific structures."], ["Connect", "Authorized users begin working with verified records."]].map(([title, text]) => <article className="step-card" key={title}><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+    <section className="container"><div className="cta-band"><div><h2>See your school more clearly.</h2><p>Talk with us about how School Vision can fit your institution’s way of working.</p></div><Link className="button" href="/register/institution">Start a conversation <span aria-hidden="true">→</span></Link></div></section>
+  </main></PublicShell>;
 }
