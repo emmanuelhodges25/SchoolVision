@@ -39,4 +39,3 @@ Open `http://localhost:3000`. Stop the local server with `Ctrl+C` in the termina
 - Do not add a timetable module.
 - Keep institution data isolated and all privileged operations server-side.
 - Do not describe a starter page or preview deployment as a functioning school system.
-
